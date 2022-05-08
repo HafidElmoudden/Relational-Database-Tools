@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCNF Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div id="closure-page">
+            <img src="Closure.png" alt="Closure">
+            <h4>Closure Calculator</h4>
+        </div>
+        <div id="key-page">
+            <img src="Key.webp" alt="Key">
+            <h4>Key Finder</h4>
+        </div>
+        <div id="decomposition-page">
+            <img src="Decomposition.png" alt="Decomposition">
+            <h4>BCNF Decomposition</h4>
+        </div>
+    </div>
+    <div class="main">
+        <h1>Closure Calculator</h1>
+        <div class="content">
+            <form id="form" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                <label>Attributes ( Separate it with ',' ) :</label>
+                <input type="text" id="attributes" placeholder="    Enter your attributes ..."/>
+                <label>Depndancies :</label>
+                <div id="dfs" >
+                    <div class="df">
+                        <input type="text" class="df-left" placeholder="    Enter left hand attributes ..."/>
+                        &#8594;	
+                        <input type="text" class="df-right" placeholder="    Enter right hand attributes ..."/>
+                    </div>
+                </div>
+                <div class="closure-section" style="display: flex; flex-direction: column; align-items: center; gap:10px">
+                    <label>Enter your closure set :</label>
+                    <input type="text" id="closure-set" placeholder="    Enter your closure set ..."/>
+                </div>
+                <div>
+                    <button id="df-adder" type="button">New Dependancy</button>
+                    <button id="df-deleter" type="button">Delete Dependancy</button>
+                </div>
+
+                <button type="button" id="calculate">Calculate</button>
+                <h1 id="result">Result : </h1>
+                <div id="keys">
+                </div>
+                <div id="d-relations">
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
