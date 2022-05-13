@@ -9,36 +9,38 @@
 </head>
 <body>
     <div class="header">
-        <div id="closure-page">
-            <img src="Closure.png" alt="Closure">
-            <h4>Closure Calculator</h4>
-        </div>
-        <div id="key-page">
-            <img src="Key.webp" alt="Key">
-            <h4>Key Finder</h4>
-        </div>
-        <div id="decomposition-page">
-            <img src="Decomposition.png" alt="Decomposition">
-            <h4>BCNF Decomposition</h4>
+        <div class="header-images-container">
+            <div id="closure-page" class="header-section">
+                <img class="header-image" src="Closure.png" alt="Closure">
+                <h4 class="header-title">Closure Calculator</h4>
+            </div>
+            <div id="key-page" class="header-section">
+                <img class="header-image" src="key.png" alt="Key" width="1rem">
+                <h4 class="header-title">Key Finder</h4>
+            </div>
+            <div id="decomposition-page" class="header-section">
+                <img class="header-image" src="Decomposition.png" alt="Decomposition">
+                <h4 class="header-title">BCNF Decomposition</h4>
+            </div>
         </div>
     </div>
     <div class="main">
-        <h1>Closure Calculator</h1>
+        <h1 id="main-title">Closure Calculator</h1>
         <div class="content">
             <form id="form" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                <label>Attributes ( Separate it with ',' ) :</label>
-                <input type="text" id="attributes" placeholder="    Enter your attributes ..."/>
+                <label>Attributes :</label>
+                <input type="text" id="attributes" placeholder="Enter your attributes ..."/>
                 <label>Depndancies :</label>
                 <div id="dfs" >
                     <div class="df">
-                        <input type="text" class="df-left" placeholder="    Enter left hand attributes ..."/>
+                        <input type="text" class="df-left" placeholder="Enter left hand attributes ..."/>
                         &#8594;	
-                        <input type="text" class="df-right" placeholder="    Enter right hand attributes ..."/>
+                        <input type="text" class="df-right" placeholder="Enter right hand attributes ..."/>
                     </div>
                 </div>
                 <div class="closure-section" style="display: flex; flex-direction: column; align-items: center; gap:10px">
                     <label>Enter your closure set :</label>
-                    <input type="text" id="closure-set" placeholder="    Enter your closure set ..."/>
+                    <input type="text" id="closure-set" placeholder="Enter your closure set ..."/>
                 </div>
                 <div>
                     <button id="df-adder" type="button">New Dependancy</button>

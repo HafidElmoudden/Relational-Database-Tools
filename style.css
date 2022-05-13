@@ -1,3 +1,118 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Saira+Extra+Condensed:wght@700&display=swap'); */
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4taVIGxA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4kaVIGxA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4saVIGxA.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4jaVIGxA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4iaVIGxA.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4vaVIGxA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVIGxA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(fonts/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+/* vietnamese */
+@font-face {
+    font-family: 'Saira Extra Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(fonts/-nFvOHYr-vcC7h8MklGBkrvmUG9rbpkisrTrU23h1Aphim8.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Saira Extra Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(fonts/-nFvOHYr-vcC7h8MklGBkrvmUG9rbpkisrTrU23h1Qphim8.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Saira Extra Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(fonts/-nFvOHYr-vcC7h8MklGBkrvmUG9rbpkisrTrU23h2wph.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
+/* ----------------------------- fonts -------------------------------------- */
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,18 +121,15 @@
 
 body {
     display: flex;
-        background: linear-gradient(
-                    to bottom right,
-                    #FFDEF2,
-                    #E6F0FF);
-                    /* background: linear-gradient(
-                    to bottom right,
-                    #FBCD38,
-                    #FCBB5B); */
-                    background-repeat: no-repeat;
-                    min-height: 100vh;
-                    min-width: 100vw;
-                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* background: linear-gradient(
+                to bottom right,
+                #FFDEF2,
+                #E6E9EC); */
+    background-color: #E6E9EC;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: 'Open Sans', sans-serif;
     flex-direction: row-reverse;
     /* justify-content: space-between; */
 }
@@ -29,40 +141,90 @@ body {
     align-items: center;
     min-height: 100vh;
     min-width: 10vw;
+    color: white;
 }
 
-.header div img {
+.header div div img {
     width: 2.5rem;
     height: 2.5rem;
     transition: ease 100ms;
 }
-.header div:hover img {
-    width: 2.8rem;
-    height: 2.8rem;
+
+.header-images-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    min-width: 90%;
+    max-width: 100%;
+    background-color: #3242CC;
+    border-radius: 1rem;
 }
-.header div {
-    cursor: pointer;
+
+.header div div {
     text-align: center;
+}
+
+.header-section {
+    cursor: pointer;
 }
 .header div:not(:first-child) {
     padding-top: 50px;
 }
 
-.header div h4 {
-    padding-top: 5px;
-    color: #E48C00;
+#key-page img {
+    width: 4.9rem !important;
 }
+#closure-page .header-title{
+    color: #FFFDFF;
+}
+
+#closure-page img{
+    filter: invert(85%) sepia(1%) saturate(2211%) hue-rotate(25deg) brightness(119%) contrast(99%);
+}
+
+
+#key-page h4,
+#closure-page h4,
+#decomposition-page h4 {
+    transition: ease 300ms;
+}
+
+.header-title {
+    padding-top: 5px;
+    color: #7D8EF9;
+}
+
+.header-section:hover h4{
+    color:#d8dbdd !important;
+}
+
+.header-section:hover img {
+filter: invert(99%) sepia(0%) saturate(29%) hue-rotate(20deg) brightness(92%) contrast(88%) !important;
+}
+
+.header-section img {
+filter: invert(45%) sepia(71%) saturate(1491%) hue-rotate(212deg) brightness(106%) contrast(91%);
+}
+
+
+
 .main {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 input {
     height: 40px;
     min-width: 15rem;
     max-width: 30rem;
+    text-indent: 15px;
+    font-size:15px;
 }
 
 button {
@@ -71,7 +233,7 @@ button {
     height: 50px;
     width: 100px;
     border: 2px solid white;
-    background-color: #7888C5;
+    background-color: #3242CC;
     color: white;
 }
 

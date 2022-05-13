@@ -13,45 +13,71 @@ const keyPageBtn = document.getElementById("key-page");
 const closurePageBtn = document.getElementById("closure-page");
 const decompositionPageBtn = document.getElementById("decomposition-page");
 const closureSection = document.getElementsByClassName("closure-section");
-const keysdiv = document.getElementById('keys');
-const drelationsdiv = document.getElementById('d-relations');
+const keysdiv = document.getElementById("keys");
+const drelationsdiv = document.getElementById("d-relations");
+const headerTitles = document.getElementsByClassName("header-title");
+const mainTitle = document.getElementById("main-title");
+const headerImage = document.getElementsByClassName("header-image");
 let calculateBtnState = 0;
 
 // ---------------------------------Pages Stuff---------------------------
 closurePageBtn.addEventListener("click", () => {
-  keysdiv.innerHTML = '';
-  drelationsdiv.innerHTML = '';
+  keysdiv.innerHTML = "";
+  drelationsdiv.innerHTML = "";
+  mainTitle.textContent = "Closure Calculator";
+  for (const himage of headerImage)
+    himage.style.filter =
+      "invert(45%) sepia(71%) saturate(1491%) hue-rotate(212deg) brightness(106%) contrast(91%)";
+  headerImage[0].style.filter =
+    "invert(85%) sepia(1%) saturate(2211%) hue-rotate(25deg) brightness(119%) contrast(99%)";
+  for (let title of headerTitles) title.style.color = "#7D8EF9";
+  headerTitles[0].style.color = "#FFFDFF";
   closureSection[0].style.display = "flex";
-  keysdiv.style.display = 'none';
-  drelationsdiv.style.display = 'none';
+  keysdiv.style.display = "none";
+  drelationsdiv.style.display = "none";
   calculateBtn.textContent = "Calculate";
   result.textContent = "Result :";
   calculateBtnState = 0;
 });
 
 keyPageBtn.addEventListener("click", () => {
-  keysdiv.innerHTML = '';
-  drelationsdiv.innerHTML = '';
+  keysdiv.innerHTML = "";
+  drelationsdiv.innerHTML = "";
+  mainTitle.textContent = "Key Finder";
+  for (const himage of headerImage)
+    himage.style.filter =
+      "invert(45%) sepia(71%) saturate(1491%) hue-rotate(212deg) brightness(106%) contrast(91%)";
+  headerImage[1].style.filter =
+    "invert(85%) sepia(1%) saturate(2211%) hue-rotate(25deg) brightness(119%) contrast(99%)";
+  for (let title of headerTitles) title.style.color = "#7D8EF9";
+  headerTitles[1].style.color = "#FFFDFF";
   closureSection[0].style.display = "none";
-  keysdiv.style.display = 'flex';
-  drelationsdiv.style.display = 'none';
+  keysdiv.style.display = "flex";
+  drelationsdiv.style.display = "none";
   calculateBtn.textContent = "Find Keys";
   result.textContent = "Candidate Keys :";
   calculateBtnState = 1;
 });
 
 decompositionPageBtn.addEventListener("click", () => {
-  keysdiv.innerHTML = '';
-  drelationsdiv.innerHTML = '';
+  keysdiv.innerHTML = "";
+  drelationsdiv.innerHTML = "";
+  mainTitle.textContent = "BCNF Decomposition";
   closureSection[0].style.display = "none";
-  drelationsdiv.style.display = 'flex';
-  drelationsdiv.style.flexDirection = 'column';
-  keysdiv.style.display = 'none';
+  for (const himage of headerImage)
+    himage.style.filter =
+      "invert(45%) sepia(71%) saturate(1491%) hue-rotate(212deg) brightness(106%) contrast(91%)";
+  headerImage[2].style.filter =
+    "invert(85%) sepia(1%) saturate(2211%) hue-rotate(25deg) brightness(119%) contrast(99%)";
+  for (let title of headerTitles) title.style.color = "#7D8EF9";
+  headerTitles[2].style.color = "#FFFDFF";
+  drelationsdiv.style.display = "flex";
+  drelationsdiv.style.flexDirection = "column";
+  keysdiv.style.display = "none";
   calculateBtn.textContent = "Decompose Relation";
   result.textContent = "Relations :";
   calculateBtnState = 2;
 });
-
 
 // -----------------------------------------------------------------------
 function dfMaker() {
@@ -113,6 +139,12 @@ function closureCalc(set, dependances) {
 }
 
 function dependanceFiller(dependances) {
+  for (let i = 0; i < lesDf.length; i++)
+    if (dfRight[i].value == "" || dfLeft[i].value == "") {
+      alert("You have empty dependances!");
+      return false;
+    }
+
   for (let i = 0; i < lesDf.length; i++) {
     dependances.push({
       droite: dfRight[i].value.split(",").filter((el) => el != ""),
@@ -136,12 +168,6 @@ function isClosureKeyChecker(attributes, closureSet) {
 let Keys = [];
 let dependances = [];
 let set;
-
-function arrayEqual(source) {
-  let res = [];
-  for (let i = 0; i < source.length; i++) res.push(source[i]);
-  return res;
-}
 
 function arrayShower(array) {
   for (let i = 0; i < array.length; i++) {
@@ -183,10 +209,8 @@ function isAlreadyExist(newKey, Keys) {
   for (let i = 0; i < Keys.length; i++)
     if (arraysEqual(newKeyCopy, Array.from(Keys[i]).sort())) {
       return true;
-    }
-    else return false;
+    } else return false;
 }
-
 
 function string_recurse(active, rest) {
   if (rest.length == 0) {
@@ -211,7 +235,6 @@ function combinations(str) {
   return fn("", str, []);
 }
 
-
 const powerset = (array) => {
   // O(2^n)
   const results = [[]];
@@ -230,45 +253,97 @@ function isContainKey(newKey, Keys) {
       Keys[i].every((element) => {
         return newKey.indexOf(element) !== -1;
       }) == true
-      ){
-        return true;
-      }
-      
+    ) {
+      return true;
     }
-    return false;
+  }
+  return false;
 }
 
-function isLeftHandKey(dependance, keys){
-  for(let key of keys)
-    if(arraysEqual(dependance.gauche, key))
-      return true;
-    return false;
+function isLeftHandKey(dependance, keys) {
+  for (let key of keys) if (arraysEqual(dependance.gauche, key)) return true;
+  return false;
 }
 
 calculateBtn.addEventListener("click", () => {
-  keysdiv.innerHTML = '';
-  drelationsdiv.innerHTML = '';
+  keysdiv.innerHTML = "";
+  drelationsdiv.innerHTML = "";
   let dummyClosureSet;
   let calculatedDummyClosureSet;
   let allCombinationsPossible;
   let closureCalcArrayDummy;
+  let attributeError;
   let attributesArray = attributes.value.split(",").filter((el) => el != "");
   switch (calculateBtnState) {
     case 0:
+      let setError = true;
       dependances = [];
       set = closureSet.value.split(",").filter((el) => el != "");
+      if (dependanceFiller(dependances) == false) break;
+
+      for (const leSet of set)
+        if (similarFinder(leSet, attributesArray)) setError = false;
+        else {
+          setError = true;
+          break;
+        }
+
+      if (setError) {
+        alert("There's an unknown attribute in your closure set!");
+        break;
+      }
+
       dependanceFiller(dependances);
       closureCalc(set, dependances);
       console.log(set);
       result.innerHTML = `Result : {${set}}<sup>+</sup>`;
       break;
     case 1:
-      const keyTexts = document.getElementsByClassName('keyTexts');
+      attributeError = true;
+      const keyTexts = document.getElementsByClassName("keyTexts");
       dependances = [];
       Keys = [];
       dummyClosureSet = [];
       calculatedDummyClosureSet = [];
+      if (dependanceFiller(dependances) == false) break;
+
       dependanceFiller(dependances);
+      for (const dependance of dependances) {
+        for (const dfleft of dependance.gauche) {
+          if (similarFinder(dfleft, attributesArray)) attributeError = false;
+          else {
+            attributeError = true;
+            break;
+          }
+        }
+        if (attributeError) {
+          alert(
+            `There's an unknown attribute in your left dependance number ${
+              dependances.indexOf(dependance) + 1
+            }!`
+          );
+          break;
+        }
+        for (const dfright of dependance.droite) {
+          if (similarFinder(dfright, attributesArray)) attributeError = false;
+          else {
+            attributeError = true;
+            break;
+          }
+        }
+        if (attributeError) {
+          alert(
+            `There's an unknown attribute in your right dependance number ${
+              dependances.indexOf(dependance) + 1
+            }!`
+          );
+          break;
+        }
+      }
+
+      if (attributeError) {
+        break;
+      }
       allCombinationsPossible = powerset(attributesArray);
       allCombinationsPossible.shift();
       for (const element of allCombinationsPossible) {
@@ -276,59 +351,105 @@ calculateBtn.addEventListener("click", () => {
         closureCalc(closureCalcArrayDummy, dependances);
         if (
           isClosureKeyChecker(attributesArray, closureCalcArrayDummy) &&
-          isContainKey(element,Keys) == false
+          isContainKey(element, Keys) == false
         )
           Keys.push(element);
       }
 
       console.log(allCombinationsPossible);
       console.log(Keys);
-      for(let key of Keys){
-        let keyText = document.createElement('h3');
+      for (let key of Keys) {
+        let keyText = document.createElement("h3");
         keyText.textContent = `{${key}}`;
-        keyText.classList.add('keyTexts');
-        keysdiv.appendChild(keyText)
+        keyText.classList.add("keyTexts");
+        keysdiv.appendChild(keyText);
       }
-   
+
       break;
     case 2:
       let relation = [Array.from(attributesArray)];
       let elementsToPush = [];
+      attributeError = true;
       dependances = [];
       Keys = [];
       dummyClosureSet = [];
       calculatedDummyClosureSet = [];
+      if (dependanceFiller(dependances) == false) break;
+
       dependanceFiller(dependances);
+      for (const dependance of dependances) {
+        for (const dfleft of dependance.gauche) {
+          if (similarFinder(dfleft, attributesArray)) attributeError = false;
+          else {
+            attributeError = true;
+            break;
+          }
+        }
+        if (attributeError) {
+          alert(
+            `There's an unknown attribute in your left dependance number ${
+              dependances.indexOf(dependance) + 1
+            }!`
+          );
+          break;
+        }
+        for (const dfright of dependance.droite) {
+          if (similarFinder(dfright, attributesArray)) attributeError = false;
+          else {
+            attributeError = true;
+            break;
+          }
+        }
+        if (attributeError) {
+          alert(
+            `There's an unknown attribute in your right dependance number ${
+              dependances.indexOf(dependance) + 1
+            }!`
+          );
+          break;
+        }
+      }
+
+      if (attributeError) {
+        break;
+      }
+
       allCombinationsPossible = powerset(attributesArray);
       allCombinationsPossible.shift();
       for (const element of allCombinationsPossible) {
         let closureCalcArrayDummy = Array.from(element);
         closureCalc(closureCalcArrayDummy, dependances);
-        if (
-          isClosureKeyChecker(attributesArray, closureCalcArrayDummy) &&
-          isContainKey(element,Keys) == false
-        )
+        if (isClosureKeyChecker(attributesArray, closureCalcArrayDummy))
           Keys.push(element);
       }
       console.log(Keys);
       console.log(relation);
-      for(let dependance of dependances)
-        if(!isLeftHandKey(dependance, Keys)){
-          elementsToPush = dependance.gauche.concat(dependance.droite)
-          console.log(elementsToPush);
-          relation[0] = relation[0].filter( el => dependance.droite.every(elem => elem != el))
-          console.log(relation, 'after filter');
-          relation.push(elementsToPush);
+      for (let dependance of dependances)
+        if (!isLeftHandKey(dependance, Keys)) {
+          let pushAllow = true;
+          elementsToPush = dependance.gauche.concat(dependance.droite);
+          for (let laRelation of relation)
+            if (arraysEqual(laRelation, Array.from(elementsToPush).sort())) {
+              pushAllow = false;
+              break;
+            }
+          if (pushAllow) {
+            relation[0] = relation[0].filter((el) =>
+              dependance.droite.every((elem) => elem != el)
+            );
+            relation.push(elementsToPush);
+          }
         }
 
-        for(let element in relation){
-          let decomposedRelation = document.createElement('h3');
-          decomposedRelation.textContent = `R${Number(element)+1}(${relation[element]})`;
-          drelationsdiv.appendChild(decomposedRelation)
-        }
+      for (let element in relation) {
+        let decomposedRelation = document.createElement("h3");
+        decomposedRelation.textContent = `R${Number(element) + 1}(${
+          relation[element]
+        })`;
+        drelationsdiv.appendChild(decomposedRelation);
+      }
       break;
     default:
       break;
   }
 });
-
