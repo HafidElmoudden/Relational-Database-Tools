@@ -190,6 +190,7 @@ body {
 #closure-page h4,
 #decomposition-page h4 {
     transition: ease 300ms;
+    overflow-wrap: normal;
 }
 
 .header-title {
