@@ -169,6 +169,7 @@ body {
 
 .header-section {
     cursor: pointer;
+    width: 130px;
 }
 .header div:not(:first-child) {
     padding-top: 50px;
