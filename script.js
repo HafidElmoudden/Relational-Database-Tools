@@ -212,39 +212,15 @@ function isAlreadyExist(newKey, Keys) {
     } else return false;
 }
 
-function string_recurse(active, rest) {
-  if (rest.length == 0) {
-    console.log(active);
-  } else {
-    string_recurse(active + rest.charAt(0), rest.substring(1, rest.length));
-    string_recurse(active, rest.substring(1, rest.length));
-  }
-}
-
-function combinations(str) {
-  var fn = function (active, rest, a) {
-    if (!active && !rest) return;
-    if (!rest) {
-      a.push(active);
-    } else {
-      fn(active + rest[0], rest.slice(1), a);
-      fn(active, rest.slice(1), a);
-    }
-    return a;
-  };
-  return fn("", str, []);
-}
-
-const powerset = (array) => {
-  // O(2^n)
-  const results = [[]];
-  for (const value of array) {
-    const copy = Array.from(results); // See note below.
-    for (const prefix of copy) {
-      results.push(prefix.concat(value));
+const combinationsMaker = (array) => {
+  const combinations = [[]];
+  for (const value of array) {            // [] , [a], [b], [b,a], [c], [c,a], [c,b,a]
+    const combinationsCopy = Array.from(combinations);
+    for (const combination of combinationsCopy) {
+      combinations.push(combination.concat(value));
     }
   }
-  return results;
+  return combinations;
 };
 
 function isContainKey(newKey, Keys) {
@@ -344,7 +320,7 @@ calculateBtn.addEventListener("click", () => {
       if (attributeError) {
         break;
       }
-      allCombinationsPossible = powerset(attributesArray);
+      allCombinationsPossible = combinationsMaker(attributesArray);
       allCombinationsPossible.shift();
       for (const element of allCombinationsPossible) {
         closureCalcArrayDummy = Array.from(element);
@@ -414,7 +390,7 @@ calculateBtn.addEventListener("click", () => {
         break;
       }
 
-      allCombinationsPossible = powerset(attributesArray);
+      allCombinationsPossible = combinationsMaker(attributesArray);
       allCombinationsPossible.shift();
       for (const element of allCombinationsPossible) {
         let closureCalcArrayDummy = Array.from(element);
